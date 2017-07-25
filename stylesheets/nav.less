@@ -1,0 +1,289 @@
+
+#nav-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-container {
+  width: 30%;
+}
+
+.nav-container {
+  width: 70%;
+  padding: 55px 0;
+}
+
+
+
+nav.navbar {
+  margin: 0;
+  padding: 0 50px;
+  min-height: 85px;
+  z-index: 1000;
+  .navbar-brand {
+    width: 275px;
+    transition: all 0.3s ease 0s;
+    padding: 0;
+    margin-top: 16px;
+  }
+	.navbar-toggle {
+    margin: 26px 0 13px 0;
+  }
+	a {
+		// font-size: .65em;
+    transition: all 0.3s ease;
+    text-decoration: none;
+	}
+  .navbar-toggle {
+    border: 1px solid @white;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: @white;
+  }
+}
+
+.navbar-collapse.collapse {
+  float: none;
+}
+
+nav.navbar.shrink {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  transition: all 0.3s ease 0s;
+  border-radius: 0;
+  .navbar-brand {
+    width: 175px;
+  }
+  a {
+    font-size: .85em;
+  }
+  .collapse {
+    // padding: 27px 0 11px 0;
+  }
+  .navbar-toggle {
+    margin: 0px 15px 8px 0;
+    padding: 10px;
+  }
+}
+
+/* padding for shrink nav around nav container */
+.shrink .nav-container {
+  padding: 30px 0 !important;
+}
+
+#header .primary-menu {
+  text-transform: uppercase;
+  font-size: 1em;
+  z-index: 100;
+  } // container class
+#header .primary-menu ul {
+  } // container class first unordered list
+#header .primary-menu ul ul {} //unordered list within an unordered list
+#header .primary-menu li {
+  color: @white;
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: 700;
+    &:hover, :active, :focus {
+      border-bottom: 2px solid @gold;
+    }
+    &:hover ul.sub-menu {
+      width: 100%;
+      position: fixed;
+      background-color: @gold;
+      // display: block;
+      margin: 0;
+      padding: 30px;
+      top: 115px;
+      left: 0;
+      text-align: center;
+    }
+  } // each navigation item
+#header .primary-menu li a {
+  font-family: 'Josefin Sans', sans-serif;
+  color: @white;
+    &:hover {
+    }
+  } // each navigation item anchor
+#header .primary-menu li ul {
+  display: none;
+  } // unordered list if there is drop down items
+#header .primary-menu li li {
+  // display: block;
+  border: none;
+  padding: 0px 10px;
+    &:hover {
+      border-bottom: none;
+    }
+  } // each drop down navigation item
+#header .primary-menu li li a {
+    &:hover {
+      color: @black;
+    }
+  } // each drop down navigation item anchor
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 100px 0 100px;
+  border-color: @gold transparent transparent
+}
+
+/* Shrink */
+.shrink {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 0 50px;
+  z-index: 100;
+}
+
+.shrink #header .primary-menu {
+  padding: 0 !important;
+}
+
+.navbar-toggle {
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+
+  &.collapsed {
+    .top-bar {
+      transform: rotate(0);
+    }
+    .middle-bar {
+      opacity: 1;
+    }
+    .bottom-bar {
+      transform: rotate(0);
+    }
+  }
+}
+
+
+
+/* MOBILE MENU */
+
+// .collapse {
+//   // padding: 60px 0;
+// }
+//
+// .collapse ul.menu {
+//   margin: 0;
+//   font-family: 'Josefin Sans', sans-serif !important;
+// }
+//
+// .collapse ul.menu li {
+//   font-family: 'Josefin Sans', sans-serif;
+//   display: inline-block;
+//   font-size: 1.4em;
+//   color: #FFF;
+//   padding: 0 10px;
+//   text-transform: uppercase;
+//   margin: 0;
+// }
+//
+// .collapse ul.menu li a {
+//   font-family: 'Josefin Sans', sans-serif;
+//   color: #FFF;
+//   font-weight: 700;
+// }
+//
+// .collapse ul.sub-menu, .collapse ul.children {
+//   display: none;
+// }
+
+// .collapse ul.sub-menu li:active {
+//   display: block !important;
+//   position: relative;
+//   top: 0px;
+//   left: 0px;
+//   background-color: #ddd9d4;
+// }
+
+
+/* Mobile Menu */
+// .nav-mob {
+// display: none;
+// }
+//
+// .mob-menu {
+// font-size: 30px;
+// background-color: transparent;
+// color: #fff;
+// border: none;
+// position: absolute;
+// top: 5px;
+// right: 10px;
+// }
+//
+// /* The Overlay (background) */
+// .overlay {
+//   /* Height & width depends on how you want to reveal the overlay (see JS below) */
+//   height: 100%;
+//   width: 0;
+//   position: fixed; /* Stay in place */
+//   z-index: 1; /* Sit on top */
+//   left: 0;
+//   top: 0;
+//   background-color: rgb(0,0,0); /* Black fallback color */
+//   background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+//   overflow-x: hidden; /* Disable horizontal scroll */
+//   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+// }
+//
+// /* Position the content inside the overlay */
+// .overlay-content {
+//   position: relative;
+//   top: 25%; /* 25% from the top */
+//   width: 100%; /* 100% width */
+//   text-align: center; /* Centered text/links */
+//   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+// }
+//
+// /* The navigation links inside the overlay */
+// .overlay a {
+//   padding: 8px;
+//   text-decoration: none;
+//   font-size: 36px;
+//   color: #818181;
+//   display: block; /* Display block instead of inline */
+//   transition: 0.3s; /* Transition effects on hover (color) */
+// }
+//
+// /* When you mouse over the navigation links, change their color */
+// .overlay a:hover, .overlay a:focus {
+//   color: #f1f1f1;
+// }
+//
+// /* Position the close button (top right corner) */
+// .overlay .closebtn {
+//   position: absolute;
+//   top: 20px;
+//   right: 45px;
+//   font-size: 60px;
+// }
+/* End Mobile Menu */

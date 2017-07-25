@@ -1,0 +1,97 @@
+@black: #000000;
+@white: #FFFFFF;
+@tan: #ddd9d4;
+@gold: #8c806b;
+@gray: #666666;
+@feature-dg: #e8e8e8;
+@feature-lg: #efefef;
+
+.border-radius(@radius:7px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.opacity(@opacity:1) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	opacity: @opacity;
+}
+
+.box-shadow (@xOffset:2px;@yOffset:2px;@blur:6px;@color:@black;) {
+	-moz-box-shadow: 2px 2px 6px @black;
+	-webkit-box-shadow: 2px 2px 6px @black;
+	box-shadow: 2px 2px 6px @black;
+}
+
+.transition (@type:transform;@time:1s;) {
+  -webkit-transition: @type @time;
+  -moz-transition: @type @time;
+  -o-transition: @type @time;
+  transition: @type @time;
+}
+
+.rotate (@deg:-3deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+}
+
+.button(@background:@black;@color:@white;@hover:@white;@hoverColor:@black) {
+	background:@background;
+	color:@white;
+	position:relative;
+	font-size:33px;
+	line-height:51px;
+	.border-radius(5px);
+	.box-shadow();
+	.transition (@type:all);
+	&:hover {
+		background-color:@hover;
+		color:@hoverColor;
+	}
+}
+
+.button {
+	.button();
+}
+
+/* Float Shadow */
+.float-shadow {
+	display: inline-block;
+	position: relative;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0);
+	&:before {
+		pointer-events: none;
+		position: absolute;
+		z-index: -1;
+		content: '';
+		top: 100%;
+		left: 5%;
+		height: 10px;
+		width: 90%;
+		opacity: 0;
+		background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+		/* W3C */
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-property: transform, opacity;
+		transition-property: transform, opacity;
+	}
+	&:hover, &:focus, &:active {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
+	&:hover:before, &:focus:before, &:active:before {
+		opacity: 1;
+		-webkit-transform: translateY(5px);
+		transform: translateY(5px);
+	}
+}
